@@ -1,0 +1,16 @@
+this is a web project with spring boot and rabbitmq, which is a simplest one. you can start studing across it
+
+spring boot: 1.4.2
+rabbitmq: amqp-client: 3.6.5
+logback: 1.1.7
+jackson: 2.8.4
+
+
+#### 说明一
+此项目只包含pom文件，作为其他项目的parent pom,这个pom的parent pom是spring-boot-starter-parent(1.4.2.RELEASE)
+目前，只有demo_springboot-rmq依赖了此pom。
+
+#### 说明二
+另外，打项目jar包到Nexus私库上.pdf记录了从打jar到把jar包push到Nexus上的操作步骤
+
+
