@@ -9,32 +9,34 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.2.RELEASE</version>
+        <version>1.5.2.RELEASE</version>
     </parent>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <!-- rabbitmq -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-amqp</artifactId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
     </dependencies>
+
+    <developers>
+        <developer>
+            <id>skyler</id>
+            <name>skyler</name>
+            <email>yaoyihao1@gmail.com</email>
+            <roles>
+                <role>java Developer</role>
+            </roles>
+        </developer>
+    </developers>
 
     <build>
         <plugins>
@@ -43,7 +45,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.0-beta-7</version>
@@ -54,7 +56,7 @@
                     <username>skyler</username>
                     <password>123456</password>
                     <tagBase>${project.artifactId}-${project.version}</tagBase>
-                    <!--<goals>-f ${project.artifactId}/pom.xml deploy</goals>-->
+                    &lt;!&ndash;<goals>-f ${project.artifactId}/pom.xml deploy</goals>&ndash;&gt;
                     <goals>-f pom.xml deploy</goals>
                 </configuration>
                 <dependencies>
@@ -64,11 +66,27 @@
                         <version>1.9.5</version>
                     </dependency>
                 </dependencies>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
-
     <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>http://maven.aliyun.com/nexus/content/repositories/central</url>
+            <layout>default</layout>
+            <!-- <snapshots>
+               <enabled>false</enabled>
+             </snapshots>-->
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <!--<repositories>
         <repository>
             <id>nexus</id>
             <name>local private nexus</name>
@@ -110,11 +128,11 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <!--maven scm配置-->
+    &lt;!&ndash;maven scm配置&ndash;&gt;
     <scm>
         <connection>scm:git:http://186.11.27.88:8886/skyler/my_test_parent.git</connection>
         <developerConnection>scm:git:http://186.11.27.88:8886/skyler/my_test_parent.git</developerConnection>
         <url>http://186.11.27.88:8886/skyler/my_test_parent/tree/master</url>
-    </scm>
+    </scm>-->
 
 </project>
